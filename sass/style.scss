@@ -1,0 +1,289 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+:root {
+    --light-violet: hsl(270, 3%, 87%);
+    --dark-violet: hsl(279, 6%, 55%);
+    --very-dark: hsl(278, 68%, 11%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+
+    @media only screen and (min-width: 800px) {
+        flex-direction: row;
+    }
+
+    .upper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 15em;
+
+        .back_img {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .top {
+            width: 70%;
+            height: 100%;
+            position: relative;
+            top: -13em;
+            left: 6em;
+
+            .back {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .white {
+                position: relative;
+                top: -5.6em;
+                left: 12.5em;
+                color: hsl(0, 0%, 100%);
+            }
+        }
+        .card {
+            display: block;
+            width: 80%;
+            height: 70%;
+            position: relative;
+            top: -17.5em;
+            left: 1em;
+
+            .front {
+                width: 100%;
+                height: 100%
+            }
+            svg {
+                position: relative;
+                top: -9em;
+                left: 1.5em;
+                width: 5.3em;
+                height: auto;
+            }
+            .details {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                top: -8em;
+                left: 2em;
+                color: hsl(0, 0%, 100%);
+
+                .number {
+                    display: flex;
+                    width: 80%;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 1.3em;
+                    letter-spacing: 1px;
+                    font-family: 'Space Grotesk', sans-serif;
+                    font-weight: 500;
+
+                    p {
+                        letter-spacing: 2px;
+                        font-family: 'Space Grotesk', sans-serif;
+                        font-weight: 500;
+                    }
+                }
+                .align {
+                    display: flex;
+                    width: 80%;
+                    align-items:center;
+                    justify-content: space-between;
+                    margin-top: 1em;
+
+                    .name2 {
+                        font-size: 0.7em;
+                        letter-spacing: 1px;
+                    }
+                    .date {
+                        color: var(--dark-violet);
+                        font-size: 1em;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+    .lower {
+        display: flex;
+        margin: 3em 1em 1em 1em;
+        width: 90%;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-weight: 500;
+                color: var(--very-dark);
+                margin-top: 1em;
+                margin-bottom: 0.4em;
+
+            }
+            input {
+                width: 100%;
+                padding: 0.6em;
+                outline: none;
+                border: 1px solid var(--dark-violet);
+                color: var(--very-dark);
+                font-weight: 500;
+                font-size: 1em;
+                border-radius: 0.3em;
+            }
+            ::placeholder {
+                color: var(--dark-violet);
+                font-weight: 500;
+                font-size: 1em;
+            }
+            input:hover {
+                border: 1px solid hsla(278, 68%, 11%, 0.927);;
+                cursor: pointer;
+            }
+            input.active {
+                border: 1px solid rgba(255, 0, 0, 0.797);
+            }
+            .error {
+                color: rgba(255, 0, 0, 0.756);
+                margin-top: 0.1em;
+            }
+            .mini {
+                display: grid;
+                grid-template-columns: 1fr 1fr 2fr;
+                margin-top: 1em;
+                width: 100%;
+                height: 100%;
+
+                h2 {
+                    font-size: 0.8em;
+                }
+                input[type=number] {
+                    width: 5em;
+                    padding: 0.2em;
+                    margin-right: 3px;
+                    text-align: center;
+                    color: var(--very-dark);
+                }
+                
+            }
+            .report {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 0.5em;
+                color: red;
+            }
+            .click {
+                color: hsl(0, 0%, 100%);
+                background: var(--very-dark);
+                margin-top: 1em;
+                border: 1px solid var(--very-dark);
+            }
+        }
+        .success {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3em;
+
+            svg {
+                width: 5em;
+                height: auto;
+            }
+            h2 {
+                margin-top: 1.5em;
+                color: var(--very-dark);
+                font-size: 1.2em;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 500;
+            }
+            h3 {
+                color: var(--dark-violet);
+                font-size: 1.2em;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 500;
+                margin-top: 1em;
+            }
+            span {
+                width: 100%;
+                padding: 0.6em;
+                border-radius: 0.3em;
+                color: hsl(0, 0%, 100%);
+                background: var(--very-dark);
+                margin-top: 2em;
+                text-align: center;
+                font-size: 1.2em;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 500;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+            .upper {
+                width: 35%;
+                height: 99.4vh;
+
+                .back_img {
+                    img {
+                        height: 100%;
+                    }
+                }
+                .top {
+                    top: -21em;
+                    width: 70%;
+                    height: 70%;
+                    left: 18em;
+
+                    .white {
+                        left: 16em;
+                        top: -7em;
+                        letter-spacing: 1px;
+                    }
+                }
+                .card {
+                    width: 22em;
+                    height: 11em;
+                    top: -46em;
+                    left: 13em;
+                }
+            }
+
+            .lower {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 0 16em;
+                width: 30%;
+
+                .mini {
+                    input[type-number] {
+                        padding-right: 0.1em;
+                        margin-right: 1em;
+                    }
+                }
+            }
+    }
+}
